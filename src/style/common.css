@@ -1,0 +1,233 @@
+/*=======================================================================================================================================
+  ####      ##     ##   #     ##     ######   #####   ######    #####       ##    ######    #####   ######  
+ ### ##   #####   #### ##   #####   ####     ###  ##  ###  ##  ###  ##      ###  ####      ## ###  ######   
+ ##       ## ###  #######   ## ###  ###      ##   ##  ##   ##  ##   ##      ###  ###      ##          ##    
+  ####   ##   ##  ## ####  ##   ##   # ##    ## ###   ##  ##   ##   ##      ##    # ##    ##          ##    
+     ##  #######  ##  ###  #######   ##      ####     #####    ##   ##   #  ##    ##      ##          ##    
+### ###  ##  ##   ##   ##  ##  ##    ###      ##       ## ##   ### ###  ### ##    ###     #####       ##    
+ #####   #   #     #   #   #   #      #####   ##       ##  ##   #####    ####      #####   #####       #                                                                                                
+    
+ Common styles!!!
+=======================================================================================================================================*/
+
+
+/* import google fonts */
+/* h1タグFont */
+@import url('https://fonts.googleapis.com/css2?family=Sankofa+Display&family=Silkscreen:wght@400;700&family=Sixtyfour+Convergence&display=swap');
+/* h2タグFont */
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+/* コンテンツFont */
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
+
+/* 古代風フォント */
+@import url('https://fonts.googleapis.com/css2?family=Sankofa+Display&display=swap');
+
+
+.SawarabiFont {
+    font-family : "Sawarabi Gothic", sans-serif;
+    font-weight : 400;
+    font-style  : normal;
+}
+.SankofaFont {
+    font-family : "Sankofa Display", sans-serif;
+    font-weight : 500;
+    font-style  : normal;
+}
+  
+
+/* すべてのページに適用されるスタイル */
+html{
+	/* デフォルトサイズ16px */
+	font-size   : 16px;
+	font-family : sans-serif;
+
+	/* x 軸方向へのはみだしを隠す */
+	overflow-x  : hidden;
+}
+/* 全要素に適用 */
+*{
+	/* 領域確認用 */
+	outline    : dashed 1px #999;
+	/* サイズ設定にボーダを含める。 */
+	box-sizing : border-box;
+}
+/* body 要素に適用 */
+body{
+    background-color:#eeeeee;
+	/* margin 初期化 */
+	margin : 0 0 0 0;
+}
+
+
+/* テキスト系に対するスタイル設定 */
+p{
+    text-indent : 5px;
+}
+p,li,td{
+    /* 親要素に指定された高さから1.6倍 */
+    line-height : 1.6rem;
+    /* htmlタグに指定されたサイズから等倍 */
+    font-size   : 1rem;
+}
+
+h1{
+    /* htmlタグに指定されたサイズから2倍 */
+    font-size   : 2rem;
+    line-height : 1.5rem;
+
+    /* フォントファミリを設定 */
+    font-family : "Sankofa Display", serif;
+    font-weight : 500;
+    font-style  : normal;
+
+    /* 折り返し禁止 */
+    white-space : nowrap;
+    margin      : 10px;
+}
+h2{
+    /* htmlタグに指定されたサイズから1.5倍 */
+    font-size     : 1.5rem;
+
+    /* h2タグのデザイン */
+    border-left   : solid 7px rgb(30, 144, 255);
+    border-top    : solid 3px rgba(0,0,0,0);
+    border-bottom : solid 2px rgb(19, 98, 177); 
+
+    /* フォントファミリを設定 */
+    font-family   : "Mochiy Pop One", sans-serif;
+    font-weight   : 400;
+    font-style    : normal;
+}
+h3{
+    /* htmlタグに指定されたサイズから等倍 */
+    font-size     : 1rem;
+
+    /* h3のタグのデザイン */
+    border-bottom :solid 2px #e6b800;
+    
+    text-indent   : 10px;
+}
+h4{
+    font-size     : 1rem;
+
+    /* h4のタグのデザイン */
+    border-right  : solid 100px rgba(0,0,0,0);
+    border-left   : solid 100px rgba(0,0,0,0);
+    border-bottom : solid   2px rgb(30, 144, 255);
+
+    text-indent   : 20px;
+}
+
+
+/* リンクスタイル */
+a:link{
+    color           : #ffcc00;
+    text-decoration : none;
+}
+a:visited{
+    color           : #ffcc00;
+    text-decoration : none;
+}
+a:hover{
+    color           : #e6b800;
+    /* underlineを引く */
+    text-decoration : underline;
+}
+a:active{
+    color           : #e6b800;
+    /* underlineを引く */
+    text-decoration : underline;
+}
+
+
+/* header */
+header{
+    /* headerの表示をトップへ */
+    z-index          : 255;
+
+    /* 位置を画面上で固 定 */
+    position         : fixed;
+    top              : 0;
+
+    width            : 100%;
+
+    text-align       : center;
+    background-color :white;
+
+    /* shadow */
+    box-shadow       : 1px 4px 6px rgb(0, 128, 255);
+}
+header > nav > ul{
+    /* タイトルとリンクを横に均等に並べる */
+    display         : flex;
+
+    list-style-type : none;
+    justify-content : space-around;
+}
+/* headerの動作用 */
+.hide{
+    top        : -55px;
+    transition : all 500ms linear;
+}
+.reveal{
+    top        : 0px;
+    transition : all 500ms linear;
+}
+
+/* footer */
+footer{
+    position         : relative;
+    top              : 120px;
+    
+    text-align       : center;
+    background-color : white;
+}
+
+/* テーブルスタイル */
+table{
+    width           : 100%; /*テーブルサイズを横100%へ*/
+    border-collapse : collapse;
+    box-shadow      : 1px 1px 5px black;
+}
+th{
+    background-color : #f2f2f2;
+}
+th,td{
+    padding    : 10px;
+    text-align : left;
+    border     : 1px solid #ccc;
+}
+
+/* 引用 */
+.citation{
+    font-size : 0.7rem;
+
+    margin    : 5px;
+    padding   : 5px;
+
+    border    : dashed 1px;
+}
+
+/*--コード表示用--*/
+.prettyprint ol.linenums > li {
+    list-style-type : decimal; 
+}
+pre.prettyprint {
+    white-space : pre-wrap;
+}
+.prettyprint li{
+    font-size : 0.7rem;
+}
+
+.code-title::before{
+    content     : '</> ';
+    font-weight : bold;
+    line-height : 1.2rem;
+}
+.code-title{
+    padding-left : 5px;
+    border-left  : solid 4px #e6b800;
+
+    font-size    : 1.2rem;
+    margin       : 1rem 0px;    
+}
