@@ -1,0 +1,171 @@
+<!--<link rel="stylesheet" href="css/sanaePRJObj.css">-->
+<style>
+    :root {
+        --frame-base-size: 90px;
+
+        --frame-width: 100px;
+        --frame-height: 25px;
+
+        --frame-color: rgba(0, 200, 255, 0.381);
+        --frame-border: 1px solid #0000002f;
+        --frame-shadow: 0 0 20px rgb(0, 208, 255);
+
+        --frame-rotate: 5s;
+        --frame-steps: 9;
+    }
+
+    /* 全体 */
+    .scene {
+        position: relative;
+
+        width: var(--frame-width);
+        perspective: 600px;
+
+        transition: all 1s;
+    }
+
+    /* 層 */
+    .frame {
+        width: var(--frame-width);
+        height: var(--frame-height);
+
+        position: relative;
+        left: calc(calc(var(--frame-base-size) - var(--frame-width)) / 2);
+
+        transform-style: preserve-3d;
+        transform: rotateX(-45deg) rotateY(-45deg);
+
+        animation: rotate var(--frame-rotate) infinite linear;
+    }
+
+    /* 面 */
+    .face {
+        position: absolute;
+        width: 100%;
+        height: var(--frame-height);
+
+        background: var(--frame-color);
+
+        border: var(--frame-border);
+        box-shadow: var(--frame-shadow);
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        font-size: 8px;
+        font-weight: bold;
+    }
+
+    .scene:hover {
+        perspective: 50px;
+    }
+
+    /* 面ごとの角度 */
+    .face.front {
+        transform: translateZ(calc(var(--frame-width)/2));
+    }
+
+    .face.back {
+        transform: rotateY(180deg) translateZ(calc(var(--frame-width)/2));
+    }
+
+    .face.left {
+        transform: rotateY(-90deg) translateZ(calc(var(--frame-width)/2));
+    }
+
+    .face.right {
+        transform: rotateY(90deg) translateZ(calc(var(--frame-width)/2));
+    }
+
+    .face.top {
+        transform: rotateX(90deg) translateZ(calc(var(--frame-height)/2));
+    }
+
+    .face.bottom {
+        transform: rotateX(-90deg) translateZ(calc(var(--frame-height)/2));
+    }
+
+    /* 回転 */
+    @keyframes rotate {
+        from {
+            transform: rotateX(-45deg) rotateY(-45deg)
+        }
+
+        to {
+            transform: rotateX(-45deg) rotateY(315deg)
+        }
+    }
+</style>
+
+<!-- Object -->
+<div class="scene">
+
+    <!-- frame1 -->
+    <div class="frame" style="--frame-width:10px;">
+        <div class="face front"></div>
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face back"></div>
+    </div>
+
+    <!-- frame2 -->
+    <div class="frame" style="--frame-width:40px;">
+        <div class="face front"></div>
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face back"></div>
+    </div>
+
+    <!-- frame3 -->
+    <div class="frame" style="--frame-width:70px;">
+        <div class="face front"></div>
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face back"></div>
+    </div>
+
+    <!-- frame4 middle -->
+    <div class="frame" style="--frame-width:100px;">
+        <div class="face front"></div>
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face back"></div>
+    </div>
+
+    <!-- frame5 -->
+    <div class="frame" style="--frame-width:70px;">
+        <div class="face front"></div>
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face back"></div>
+    </div>
+
+    <!-- frame5 -->
+    <div class="frame" style="--frame-width:40px;">
+        <div class="face front"></div>
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face back"></div>
+    </div>
+
+    <!-- frame7 -->
+    <div class="frame" style="--frame-width:10px;">
+        <div class="face front"></div>
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face back"></div>
+    </div>
+
+    <!-- block -->
+    <div class="frame"
+        style="--frame-width:20px;--frame-height:20px;top:-100px;--frame-shadow:0 0 20px rgba(0, 255, 255, 0.589);--frame-rotate:2s;">
+        <div class="face front"></div>
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+    </div>
+</div>
+<!-- Object End -->
